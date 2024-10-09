@@ -1,0 +1,81 @@
+<?xml-stylesheet href="filmographie.xsl" type="text/xsl" ?>
+
+<films 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="schema.xml">
+
+    <film annee="2005" visa="114089">
+
+    <nom> King kong</nom>
+    <nationalite>Americain</nationalite>
+    <realisateur>Peter Jackson</realisateur>
+    <duree unite="min">188</duree>
+
+    <genres> 
+        <genre>Aventure</genre>
+    </genres>
+
+    <scenario>( New York, 1933. Artiste de music-hall à la rue, <personnage>Ann Darrow</personnage> rencontre l'audacieux explorateur/réalisateur Carl
+Denham. Ce dernier rêve de terminer son lm inachevé, mais nourrit surtout la folle ambition d'être le premier à
+découvrir le secret de la mystérieuse Skull Island. Il va entraîner Ann dans sa périlleuse aventure...
+)</scenario>
+    
+
+    <acteurs>
+        <acteur>Peter Jackson</acteur>
+        <acteur>Naomi Watts</acteur>
+        <acteur>Jack Black</acteur>
+        <acteur> Adrien Brody</acteur>
+    </acteurs>
+
+    <exploitation>
+        <sortie> mercredi 14 décembre 2005</sortie>
+        <nbSalles>547</nbSalles>
+        <nbEntrees>2838759</nbEntrees>
+        <listepays>
+            <pays>Belgique</pays>
+            <pays>Allemagne</pays>
+        </listepays>
+    </exploitation>
+
+    <image ref="images.jpg"></image>
+
+    </film>
+
+
+    <film annee="2005" visa="114090">
+
+        <nom>Harry Potter et la Coupe de Feu</nom>
+        <nationalite>Americain</nationalite>
+        <realisateur>Tim Burton</realisateur>
+        <duree unite="min">157</duree>
+    
+        <genres> 
+            <genre>Fantastique</genre>
+            <genre>Aventure</genre>
+        </genres>
+    
+        <scenario>(Il y a fort longtemps, Wonka a pris la décision de fermer à jamais la chocolaterie à tout visiteur à la suite de nombreuses 
+            actions d'espionnage aux fins de lui voler ses recettes, ce qui l'a également amené à licencier tous ses employés, dont Joe, le grand-père de Charlie. Un jour d'hiver, <personnage>Willy Wonka</personnage> annonce qu'il organise un grand concours : il a placé dans cinq tablettes de chocolat, distribuées à travers le monde, cinq tickets d'or
+    )</scenario>
+        
+    
+        <acteurs>
+            <acteur>Emma Watson</acteur>
+            <acteur>Daniel Radcliffe</acteur>
+        </acteurs>
+    
+        <exploitation>
+            <sortie> mercredi  10 juillet 2005</sortie>
+            <nbSalles>550</nbSalles>
+            <nbEntrees>2838999</nbEntrees>
+            <listepays>
+                <pays>Espagne</pays>
+                <pays>Allemagne</pays>
+            </listepays>
+        </exploitation>
+
+        <image ref="image2.jpg"></image>
+    
+        </film>
+</films>
