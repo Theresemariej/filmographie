@@ -7,3 +7,12 @@
     color: red;
     font-size:smaller
 }
+
+.image {
+    width: 150px; /* Ajuste la taille de l'image */
+    height: auto; /* Garde les proportions de l'image */
+    margin-right: 10px; /* Ajoute un espace entre l'image et le titre */
+    
+    border-radius: 5px; /* Coins arondis */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Ajoute une ombre */
+}

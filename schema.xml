@@ -1,39 +1,24 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
+    <xs:element name="films" type="filmsType" >
+        <xs:key name="idKey">
+            <xs:selector xpath="acteurDescription"/>
+           <xs:field xpath="@id"/>
+       </xs:key>
+   
+       <xs:keyref name="refKey" refer="idKey">
+           <xs:selector xpath="film/acteurs/acteur"/>
+           <xs:field xpath="@ref"/>
+       </xs:keyref>
 
-
-    <xs:element name="films" type="filmsType">
-        <xs:key name="idkey">
-            <xs:selector xpath="acteurDescription" />
-            <xs:field xpath="@id" />
-        </xs:key>
-        <xs:keyref name="ref" refer="idkey">
-            <xs:selector xpath="film/acteurs/acteur" />
-            <xs:field xpath="@ref" />
-        </xs:keyref>
-    </xs:element>
-
-
-    <xs:element name="films" type="filmsType" />
+    </xs:element>   
 
     <xs:complexType name="filmsType">
         <xs:sequence>
             <xs:element name="film" type="filmType" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="acteurDescription" type="acteurDescriptionType" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
-
-    
-<xs:complexType name="acteurDescription">
-    <xs:sequence>
-        <xs:element name="nom" type="xs:string"/>
-        <xs:element name="prenom" type="xs:string"/>
-        <xs:element name="dateNaissance" type="xs:date"/>
-        <xs:element name="sexe" type="xs:string"/>
-    </xs:sequence>
-    <xs:attribute name="id" type="xs:positiveInteger" use="required" />
-    <xs:attribute name="lieuNaissance" type="xs:string" use="required" />
-</xs:complexType>v
-
 
     <xs:complexType name="filmType">
         <xs:sequence>
@@ -51,6 +36,17 @@
         <xs:attribute name="visa" type="xs:positiveInteger" />
     </xs:complexType>
 
+    <xs:complexType name="acteurDescriptionType">
+        <xs:sequence>
+            <xs:element name="nom" type="xs:string" />
+            <xs:element name="prenom" type="xs:string" />
+            <xs:element name="dateNaissance" type="xs:date" />
+            <xs:element name="sexe" type="sexeType" />
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+        <xs:attribute name="lieuNaissance" type="xs:string" use="required"/>
+    </xs:complexType>
+
         
 <xs:complexType name="dureeType">   
     <xs:simpleContent>
@@ -62,9 +58,12 @@
 
     <xs:complexType name="acteursType">
         <xs:sequence>
-            <xs:element name="acteur" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+            <xs:element name="acteur" type="acteurType" minOccurs="1" maxOccurs="unbounded" />
         </xs:sequence>
-        <xs:attribute name="ref"/>
+    </xs:complexType>
+
+    <xs:complexType name="acteurType" mixed="true">
+        <xs:attribute name="ref" type="xs:positiveInteger" use="required"/>
     </xs:complexType>
 
     <xs:complexType name="exploitationType">
@@ -80,29 +79,38 @@
     
     <xs:complexType name="genresType">
         <xs:sequence>
-            <xs:element name="genre" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+            <xs:element name="genre" type="genreType" minOccurs="1" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
 
 
     <xs:complexType name="listepaysType">
         <xs:sequence>
-            <xs:element name="pays" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+            <xs:element name="pays" type="paysType" minOccurs="1" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
 
 
     <xs:complexType name="imageType">
-        <xs:attribute name="ref">
-        </xs:attribute>
+        <xs:attribute name="ref"/>
     </xs:complexType>
 
     <xs:complexType name="scenarioType" mixed="true">
-
+        <xs:sequence>
+            <xs:element name="personnage" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="keyword" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
     </xs:complexType>
 
 
-    <xs:simpleType name="genre">
+    <xs:simpleType name="sexeType">
+         <xs:restriction base="xs:string">
+            <xs:enumeration value="F" />
+            <xs:enumeration value="M" />
+         </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="genreType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="action" />
             <xs:enumeration value="aventure" />
@@ -130,7 +138,7 @@
     </xs:simpleType>
 
 
-    <xs:simpleType name="pays">
+    <xs:simpleType name="paysType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="Albanie" />
             <xs:enumeration value="Allemagne" />
@@ -183,7 +191,5 @@
             <xs:enumeration value="Vatican" />
         </xs:restriction>
     </xs:simpleType>
-    
-
 
 </xs:schema>

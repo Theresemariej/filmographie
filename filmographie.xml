@@ -1,24 +1,26 @@
+<!---->
 <?xml-stylesheet href="filmographie.xsl" type="text/xsl" ?>
+
 
 <films 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xsi:noNamespaceSchemaLocation="schema.xml">
 
-    <film annee="2001" visa="114089">
+    <film annee="2005" visa="114089">
 
-    <nom>King kong</nom>
+    <nom> King kong</nom>
     <nationalite>Americain</nationalite>
     <realisateur>Peter Jackson</realisateur>
     <duree unite="min">188</duree>
 
     <genres> 
-        <genre>Aventure</genre>
+        <genre>aventure</genre>
     </genres>
 
-    <scenario>( New York, 1933. Artiste de music-hall à la rue, <personnage>Ann Darrow</personnage> rencontre l'audacieux explorateur/réalisateur Carl
-Denham. Ce dernier rêve de terminer son lm inachevé, mais nourrit surtout la folle ambition d'être le premier à
-découvrir le secret de la mystérieuse Skull Island. Il va entraîner Ann dans sa périlleuse aventure...
-)</scenario>
+    <scenario>New York, 1933. Artiste de music-hall à la rue, <personnage>Ann Darrow</personnage> rencontre l'audacieux explorateur/réalisateur Carl
+Denham. Ce dernier rêve de terminer son lm inachevé, mais nourrit surtout la folle ambition d'être <keyword>le premier à
+découvrir le secret de la mystérieuse Skull Island</keyword>. Il va entraîner Ann dans sa périlleuse aventure...
+</scenario>
     
 
     <acteurs>
@@ -29,7 +31,7 @@ découvrir le secret de la mystérieuse Skull Island. Il va entraîner Ann dans 
     </acteurs>
 
     <exploitation>
-        <sortie> mercredi 14 décembre 2001</sortie>
+        <sortie> mercredi 14 décembre 2005</sortie>
         <nbSalles>547</nbSalles>
         <nbEntrees>2838759</nbEntrees>
         <listepays>
@@ -51,13 +53,13 @@ découvrir le secret de la mystérieuse Skull Island. Il va entraîner Ann dans 
         <duree unite="min">157</duree>
     
         <genres> 
-            <genre>Fantastique</genre>
-            <genre>Aventure</genre>
+            <genre>fantastique</genre>
+            <genre>aventure</genre>
         </genres>
     
-        <scenario>(Il y a fort longtemps, Wonka a pris la décision de fermer à jamais la chocolaterie à tout visiteur à la suite de nombreuses 
-            actions d'espionnage aux fins de lui voler ses recettes, ce qui l'a également amené à licencier tous ses employés, dont Joe, le grand-père de Charlie. Un jour d'hiver, <personnage>Willy Wonka</personnage> annonce qu'il organise un grand concours : il a placé dans cinq tablettes de chocolat, distribuées à travers le monde, cinq tickets d'or
-    )</scenario>
+        <scenario>Il y a fort longtemps, <personnage>Wonka</personnage> a pris la décision de fermer à jamais la chocolaterie à tout visiteur à la suite de nombreuses 
+            actions d'espionnage aux fins de lui voler ses recettes, ce qui l'a également amené à licencier tous ses employés, dont Joe, le grand-père de <personnage>Charlie</personnage>. Un jour d'hiver, <personnage>Willy Wonka</personnage> annonce qu'il organise un grand concours : il a placé dans cinq tablettes de chocolat, distribuées à travers le monde, cinq tickets d'or
+    </scenario>
         
     
         <acteurs>
@@ -79,41 +81,38 @@ découvrir le secret de la mystérieuse Skull Island. Il va entraîner Ann dans 
     
         </film>
 
-        <acteurDescription id="1" lieuNaissance="Las Vegas">
-            <nom>Jackson</nom>
-            <prenom>Peter</prenom>
-            <dateNaissance>1987-11-02</dateNaissance> 
+        <acteurDescription id="1" lieuNaissance="Chicago">
+            <nom>Peter</nom>
+            <prenom>Jackson</prenom>
+            <dateNaissance>1999-01-02</dateNaissance>
             <sexe>M</sexe>
         </acteurDescription>
-    
-        <acteurDescription id="2" lieuNaissance="New York">
-            <nom>Watts</nom>
-            <prenom>Naomi</prenom>
-            <dateNaissance>1967-10-02</dateNaissance> 
+
+        <acteurDescription id="2" lieuNaissance="Los Angeles">
+            <nom>Naomi</nom>
+            <prenom>Watts</prenom>
+            <dateNaissance>1999-01-02</dateNaissance>
             <sexe>F</sexe>
         </acteurDescription>
-    
+
         <acteurDescription id="3" lieuNaissance="Los Angeles">
-            <nom>Black</nom>
-            <prenom>Jack</prenom>
-            <dateNaissance>1987-04-02</dateNaissance> 
+            <nom>Jack</nom>
+            <prenom>Black</prenom>
+            <dateNaissance>1999-01-02</dateNaissance>
             <sexe>M</sexe>
         </acteurDescription>
-    
-        <acteurDescription id="4" lieuNaissance="Brooklin">
+
+        <acteurDescription id="4" lieuNaissance="Paris">
             <nom>Watson</nom>
             <prenom>Emma</prenom>
-            <dateNaissance>1987-06-02</dateNaissance> 
+            <dateNaissance>1999-01-02</dateNaissance>
             <sexe>F</sexe>
         </acteurDescription>
 
-        <acteurDescription id="5" lieuNaissance="Brooklin">
+        <acteurDescription id="5" lieuNaissance="Los Angeles">
             <nom>Radcliffe</nom>
             <prenom>Daniel</prenom>
-            <dateNaissance>1987-06-02</dateNaissance> 
+            <dateNaissance>1999-01-02</dateNaissance>
             <sexe>M</sexe>
         </acteurDescription>
-
-
-
 </films>
