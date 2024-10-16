@@ -4,9 +4,9 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xsi:noNamespaceSchemaLocation="schema.xml">
 
-    <film annee="2005" visa="114089">
+    <film annee="2001" visa="114089">
 
-    <nom> King kong</nom>
+    <nom>King kong</nom>
     <nationalite>Americain</nationalite>
     <realisateur>Peter Jackson</realisateur>
     <duree unite="min">188</duree>
@@ -22,14 +22,14 @@ découvrir le secret de la mystérieuse Skull Island. Il va entraîner Ann dans 
     
 
     <acteurs>
-        <acteur>Peter Jackson</acteur>
-        <acteur>Naomi Watts</acteur>
-        <acteur>Jack Black</acteur>
-        <acteur> Adrien Brody</acteur>
+        <acteur ref="1">Peter Jackson</acteur>
+        <acteur ref="2">Naomi Watts</acteur>
+        <acteur ref="3">Jack Black</acteur>
+        <acteur ref="4">Emma Watson</acteur>
     </acteurs>
 
     <exploitation>
-        <sortie> mercredi 14 décembre 2005</sortie>
+        <sortie> mercredi 14 décembre 2001</sortie>
         <nbSalles>547</nbSalles>
         <nbEntrees>2838759</nbEntrees>
         <listepays>
@@ -61,8 +61,8 @@ découvrir le secret de la mystérieuse Skull Island. Il va entraîner Ann dans 
         
     
         <acteurs>
-            <acteur>Emma Watson</acteur>
-            <acteur>Daniel Radcliffe</acteur>
+            <acteur ref="4">Emma Watson</acteur>
+            <acteur ref="5">Daniel Radcliffe</acteur>
         </acteurs>
     
         <exploitation>
@@ -78,4 +78,42 @@ découvrir le secret de la mystérieuse Skull Island. Il va entraîner Ann dans 
         <image ref="image2.jpg"></image>
     
         </film>
+
+        <acteurDescription id="1" lieuNaissance="Las Vegas">
+            <nom>Jackson</nom>
+            <prenom>Peter</prenom>
+            <dateNaissance>1987-11-02</dateNaissance> 
+            <sexe>M</sexe>
+        </acteurDescription>
+    
+        <acteurDescription id="2" lieuNaissance="New York">
+            <nom>Watts</nom>
+            <prenom>Naomi</prenom>
+            <dateNaissance>1967-10-02</dateNaissance> 
+            <sexe>F</sexe>
+        </acteurDescription>
+    
+        <acteurDescription id="3" lieuNaissance="Los Angeles">
+            <nom>Black</nom>
+            <prenom>Jack</prenom>
+            <dateNaissance>1987-04-02</dateNaissance> 
+            <sexe>M</sexe>
+        </acteurDescription>
+    
+        <acteurDescription id="4" lieuNaissance="Brooklin">
+            <nom>Watson</nom>
+            <prenom>Emma</prenom>
+            <dateNaissance>1987-06-02</dateNaissance> 
+            <sexe>F</sexe>
+        </acteurDescription>
+
+        <acteurDescription id="5" lieuNaissance="Brooklin">
+            <nom>Radcliffe</nom>
+            <prenom>Daniel</prenom>
+            <dateNaissance>1987-06-02</dateNaissance> 
+            <sexe>M</sexe>
+        </acteurDescription>
+
+
+
 </films>

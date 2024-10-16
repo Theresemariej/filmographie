@@ -1,5 +1,19 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
+
+
+    <xs:element name="films" type="filmsType">
+        <xs:key name="idkey">
+            <xs:selector xpath="acteurDescription" />
+            <xs:field xpath="@id" />
+        </xs:key>
+        <xs:keyref name="ref" refer="idkey">
+            <xs:selector xpath="film/acteurs/acteur" />
+            <xs:field xpath="@ref" />
+        </xs:keyref>
+    </xs:element>
+
+
     <xs:element name="films" type="filmsType" />
 
     <xs:complexType name="filmsType">
@@ -7,6 +21,19 @@
             <xs:element name="film" type="filmType" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
+
+    
+<xs:complexType name="acteurDescription">
+    <xs:sequence>
+        <xs:element name="nom" type="xs:string"/>
+        <xs:element name="prenom" type="xs:string"/>
+        <xs:element name="dateNaissance" type="xs:date"/>
+        <xs:element name="sexe" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:positiveInteger" use="required" />
+    <xs:attribute name="lieuNaissance" type="xs:string" use="required" />
+</xs:complexType>v
+
 
     <xs:complexType name="filmType">
         <xs:sequence>
@@ -37,6 +64,7 @@
         <xs:sequence>
             <xs:element name="acteur" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
         </xs:sequence>
+        <xs:attribute name="ref"/>
     </xs:complexType>
 
     <xs:complexType name="exploitationType">
@@ -155,6 +183,7 @@
             <xs:enumeration value="Vatican" />
         </xs:restriction>
     </xs:simpleType>
+    
 
 
 </xs:schema>
