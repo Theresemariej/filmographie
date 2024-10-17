@@ -1,6 +1,12 @@
+body {
+    font-family: 'Dancing Script', cursive, Arial, sans-serif; /* Change la police de la page */
+}
+
 .histoireStyle {
     text-align: justify;
     background-color: #DDDDDD;
+    max-width: 700px; /* Limite la largeur du paragraphe*/
+    padding: 20px; /* Ajoute de l'espace autour du texte à l'intérieur du fond gris */
     }
 
 .couleur{
@@ -9,10 +15,21 @@
 }
 
 .image {
-    width: 150px; /* Ajuste la taille de l'image */
+    width: 250px; /* Ajuste la taille de l'image */
     height: auto; /* Garde les proportions de l'image */
     margin-right: 10px; /* Ajoute un espace entre l'image et le titre */
     
     border-radius: 5px; /* Coins arondis */
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Ajoute une ombre */
+}
+
+.puce {
+    list-style-type: none; /* Supprime les puces par défaut */
+    padding-left: 0; /* Supprime l'indentation */
+}
+
+.puce li::before {
+    content: "→ "; /* Ajoute une flèche avant chaque élément de liste */
+    color: rgb(250, 89, 202); /* Change la couleur de la flèche */
+    font-weight: bold; /* Rends la flèche plus épaisse */
 }

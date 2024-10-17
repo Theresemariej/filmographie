@@ -8,10 +8,11 @@
 <!ELEMENT duree (#PCDATA) >
 <!ELEMENT genres (genre*) >
 <!ELEMENT genre (#PCDATA) >
-<!ELEMENT scenario (#PCDATA | personnage| keyword)* >
+<!ELEMENT scenario (#PCDATA | personnage| keyword | ev)* >
 
 <!ELEMENT personnage (#PCDATA) >
 <!ELEMENT keyword (#PCDATA) >
+<!ELEMENT ev (#PCDATA) >
 
 <!ELEMENT acteurs (acteur*) >
 <!ELEMENT acteur (#PCDATA) >

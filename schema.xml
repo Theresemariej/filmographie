@@ -96,10 +96,11 @@
     </xs:complexType>
 
     <xs:complexType name="scenarioType" mixed="true">
-        <xs:sequence>
-            <xs:element name="personnage" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
-            <xs:element name="keyword" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
-        </xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="ev" type="xs:string"/>
+            <xs:element name="personnage" type="xs:string"/>
+            <xs:element name="keyword" type="xs:string"/>
+        </xs:choice>
     </xs:complexType>
 
 
