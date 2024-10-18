@@ -5,11 +5,12 @@
 
 <xsl:template match="/">
 <html><head><link rel="stylesheet" type="text/css" href="film.css" />
+ 
  <title> cinématographie </title> 
 
  <script src ="https://code.jquery.com/jquery-2.2.4.min.js" > </script>
 <script src="scroll.js"> </script>
-<link rel="stylesheet" type="text/javascript" href="scroll.min.js" />
+<link rel="stylesheet" type="text/css" href="scroll.css" />
 </head>
 <body>
 <div id="main">
@@ -22,12 +23,10 @@
         <xsl:apply-templates select="films/acteurDescription"/>
         <br/>
     </section>
-    <section>
-    <h1>Cinématographie:</h1>
+    <!--<h1>Cinématographie:</h1>-->
         <xsl:apply-templates select="films/film" mode="complet" >
            <xsl:sort select="@annee" order="descending" data-type="number" />
         </xsl:apply-templates>
-    </section>
     <!--infèrieur à 2005 <xsl:apply-templates select="films/film[@annee &lt; 2005]" />-->
 </div>
 
@@ -50,35 +49,39 @@
 </xsl:template>
 
 <xsl:template match="film" mode="complet">
-    <br/>
-    <img src="{image/@ref}" class="image" alt="Image de {nom}" />
-    <br/><br/>
-    <h2>
-    <xsl:if test="@annee=2005"> 
-    <p class="couleur">nouveauté</p>
-    </xsl:if>
+    <section>
+        <br/>
+        <a> <xsl:attribute name="name"><xsl:value-of select="nom"/></xsl:attribute>
+        <img src="{image/@ref}" class="image" alt="Image de {nom}" />
+        </a>
+        <br/><br/>
+        <h2>
+        <xsl:if test="@annee=2005"> 
+        <p class="couleur">nouveauté</p>
+         </xsl:if>
 
-    <a> <xsl:attribute name="name"><xsl:value-of select="nom"/></xsl:attribute>
-    <xsl:value-of select="nom" />
-    </a>
-    <!--<xsl:text> </xsl:text> pour mettre un espace-->
-    </h2>
-    <ul class="puce"><xsl:apply-templates select="genres/genre"/></ul>
-     <em>film <xsl:value-of select="nationalite" />
-     de <xsl:value-of select="duree" /> minutes,
-     sorti en <xsl:value-of select="@annee" /></em>
-     <br/>
-     *réalisé par <xsl:value-of select="realisateur" />*
-     <br/>
-     <ul><xsl:apply-templates select="acteurs/acteur" /></ul>
-     <p class="histoireStyle"><xsl:apply-templates select="scenario" /></p>
+         
+        <xsl:value-of select="nom" />
+         <!--<xsl:text> </xsl:text> pour mettre un espace-->
+         </h2>
+         <ul class="puce"><xsl:apply-templates select="genres/genre"/></ul>
+        <em>film <xsl:value-of select="nationalite" />
+         de <xsl:value-of select="duree" /> minutes,
+        sorti en <xsl:value-of select="@annee" /></em>
+        <br/>
+        *réalisé par <xsl:value-of select="realisateur" />*
+        <br/>
+        <ul><xsl:apply-templates select="acteurs/acteur" /></ul>
+        <p class="histoireStyle"><xsl:apply-templates select="scenario" /></p>
+    </section>
 </xsl:template>
 
 
 <xsl:template match="film" mode="tdm">
     <li>
-    <a>
-    <xsl:attribute name="href">#<xsl:value-of select="nom" /></xsl:attribute>
+    <a href="#">
+  <xsl:attribute name="onclick"> $('.main').moveTo(<xsl:value-of select="position()+2" />);</xsl:attribute>
+   
     <xsl:value-of select="nom" />
     </a>
     (<xsl:value-of select="count(acteurs/acteur)"/>
@@ -107,8 +110,8 @@
 
 <xsl:template match="film" mode="filmActeur"> 
     <xsl:text> </xsl:text>
-    <a>
-    <xsl:attribute name="href">#<xsl:value-of select="nom" /></xsl:attribute>
+    <a href="#">
+    <xsl:attribute name="onclick">$('.main').moveTo(<xsl:value-of select="position()+2" />);</xsl:attribute>
     <xsl:value-of select="position()" />
     </a>
 </xsl:template>
